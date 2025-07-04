@@ -16,7 +16,11 @@ import TextStyle from '@tiptap/extension-text-style'
 import { Color } from '@tiptap/extension-color'
 import Highlight from '@tiptap/extension-highlight'
 import Link from '@tiptap/extension-link'
+import TextAlign from '@tiptap/extension-text-align'
 import { useEditorStore } from "@/store/use-editor-store";
+import { FontSizeExtension } from "@/extensions/font-size";
+
+
 
 
 export const Editor = () => {
@@ -58,6 +62,10 @@ export const Editor = () => {
       FontFamily,
       TaskList,
       TextStyle,
+      FontSizeExtension,
+      TextAlign.configure({
+        types:["heading" , "paragraph"]
+      }),
       Link.configure({
         openOnClick: false,
         autolink: true,
@@ -80,23 +88,23 @@ export const Editor = () => {
       ImageResize,
       Underline,
     ],
-    content: `
-        <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th colspan="3">Description</th>
-            </tr>
-            <tr>
-              <td>Cyndi Lauper</td>
-              <td>Singer</td>
-              <td>Songwriter</td>
-              <td>Actress</td>
-            </tr>
-          </tbody>
-        </table>
-      `,
-    // content: "<p>Hello World! 🌎️</p>",
+    // content: `
+    //     <table>
+    //       <tbody>
+    //         <tr>
+    //           <th>Name</th>
+    //           <th colspan="3">Description</th>
+    //         </tr>
+    //         <tr>
+    //           <td>Cyndi Lauper</td>
+    //           <td>Singer</td>
+    //           <td>Songwriter</td>
+    //           <td>Actress</td>
+    //         </tr>
+    //       </tbody>
+    //     </table>
+    //   `,
+    content: "<p>Hello World! 🌎️</p>",
   });
 
   return (
