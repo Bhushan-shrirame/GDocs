@@ -3,11 +3,14 @@
 import Link from "next/link";
 import { Navbar } from "./navbar";
 import { TemplateGallery } from "./templates-gallery";
-import { useQuery } from "convex/react";
+import { usePaginatedQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+import { DocumentTable } from "./documents-table";
+import { useSearchParam } from "@/hooks/use-search-param";
 
 const Home = () => {
-  const document = useQuery(api.documents.get)
+  const [search] = useSearchParam();
+  const {results, status , loadMore} = usePaginatedQuery(api.documents.get, {search}, {initialNumItems: 5} )
   if(document === undefined) {
     return(
       <p>Loading...</p>
@@ -20,11 +23,12 @@ const Home = () => {
       </div>
       <div className="mt-16">
         <TemplateGallery/>
-        {
-          document?.map((document) => (
-            <span key = {document._id}>{document.title}</span>
-          ))
-        }
+        <DocumentTable
+          documents = {results}
+          loadMore = {loadMore}
+          status = {status}
+        />
+
       </div>
     </div>
   );
