@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+# enviroment variable
+```bash
+CONVEX_DEPLOYMENT
+NEXT_PUBLIC_CONVEX_URL
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+CLERK_SECRET_KEY
+LIVEBLOCK_SECRET_KEY
+```
+
+
+## Known Issues
+1. custom extension are not working (font size , line height)
+2. margin ruler right is not working
+3. room permission is not working in collaboration 
+4. tagging is not working (user are not able to tag other but can comment)
