@@ -47,6 +47,5 @@ LIVEBLOCK_SECRET_KEY
 
 ## Known Issues
 1. custom extension are not working (font size , line height)
-2. margin ruler right is not working
-3. room permission is not working in collaboration 
-4. tagging is not working (user are not able to tag other but can comment)
+2. room permission is not working in collaboration 
+3. tagging is not working (user are not able to tag other but can comment)

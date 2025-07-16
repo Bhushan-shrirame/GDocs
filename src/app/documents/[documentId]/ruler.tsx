@@ -1,4 +1,3 @@
-import { transform } from "next/dist/build/swc/generated-native";
 import { useRef, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
 import { useStorage, useMutation } from "@liveblocks/react";
@@ -42,7 +41,7 @@ export const Ruler = () => {
         }
         else if(isDraggingRight){
           const maxRightPosition = 816 - (leftMargin + 100)
-          const newRightPostion = Math.min(816 - rawPosition , 0)
+          const newRightPostion = Math.max(816 - rawPosition , 0)
           const constrainedRightPostion = Math.min(newRightPostion , maxRightPosition)
           setRightMargin(constrainedRightPostion);
         }

@@ -4,7 +4,7 @@ import "@tiptap/extension-text-style";
 declare module "@tiptap/core"{
   interface Commands<ReturnType>{
     fontSize:{
-      setFontSize:(size: String) => ReturnType
+      setFontSize:(size: string) => ReturnType
       unsetFontSize:() => ReturnType
     } 
   }

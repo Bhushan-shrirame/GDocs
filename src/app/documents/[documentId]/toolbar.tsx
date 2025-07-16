@@ -7,7 +7,7 @@ import {
   AlignJustifyIcon,
   AlignLeftIcon,
   AlignRightIcon,
-  Bold,
+  // Bold,
   BoldIcon,
   ChevronDownIcon,
   HighlighterIcon,
